@@ -50,7 +50,7 @@ function createJob(data, done) {
         done(err);
       }
       if (!err) {
-        console.log('created.');
+        //console.log('created.');
         done();
       }
     });
@@ -59,7 +59,7 @@ function createJob(data, done) {
 // Process up to 20 jobs concurrently
 queue.process('job', 20, function(job, done){
 
-  console.log('processing a job.');
+  //console.log('processing a job.');
   
   connection.query('INSERT INTO transactions SET ?', job.data, function (error, results, fields) {
   if (error) console.log(error);
